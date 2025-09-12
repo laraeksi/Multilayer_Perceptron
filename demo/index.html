@@ -28,6 +28,9 @@
     .footer{color:#8a90a0;font-size:12px;margin-top:12px}
     a{color:var(--accent);text-decoration:none}
     .legend{font-size:12px;color:var(--muted);margin:8px 0}
+    .chartwrap{position:relative;height:320px}
+    @media (min-width: 900px){ .chartwrap{height:360px} }
+    .row > div{min-height:0}
   </style>
 </head>
 <body>
@@ -64,11 +67,11 @@
       <div class="row" style="margin-top:14px">
         <div>
           <div class="legend">Line chart — Y True vs Y Pred (auto-downsampled for speed)</div>
-          <canvas id="lineChart" height="260"></canvas>
+          <div class="chartwrap"><canvas id="lineChart"></canvas></div>
         </div>
         <div>
           <div class="legend">Scatter — Y True vs Y Pred (y = x line shown)</div>
-          <canvas id="scatterChart" height="260"></canvas>
+          <div class="chartwrap"><canvas id="scatterChart"></canvas></div>
         </div>
       </div>
       <div class="footer">Tip: Keep the Excel files in <code>/demo/data</code>. On Vercel, set Framework: <b>Other</b>, Root: <code>/demo</code>, Output: <code>.</code>. This page expects columns named <code>Y True</code> and <code>Y Pred</code> in the first sheet.</div>
